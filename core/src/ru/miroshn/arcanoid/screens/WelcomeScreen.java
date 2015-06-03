@@ -1,6 +1,11 @@
 package ru.miroshn.arcanoid.screens;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import ru.miroshn.arcanoid.helpers.ui.Title;
+import ru.miroshn.arcanoid.helpers.ui.Titles;
 
 /**
  * Экран приветствия с названием игры <br/>
@@ -8,6 +13,17 @@ import com.badlogic.gdx.Screen;
  * @author miroshn
  */
 public class WelcomeScreen implements Screen {
+    private final Title title; // изображение названия игры
+    private final Stage stage;
+
+    public WelcomeScreen() {
+        title = new Title(Titles.WELCOME_TITLE);
+        title.setPosition((Gdx.graphics.getWidth() - title.getWidth())/2.0f
+                ,(Gdx.graphics.getHeight() - title.getHeight()/2.0f)/2.0f);
+        stage = new Stage();
+        stage.addActor(title);
+    }
+
     @Override
     public void show() {
 
@@ -15,7 +31,11 @@ public class WelcomeScreen implements Screen {
 
     @Override
     public void render(float delta) {
+        Gdx.gl.glClearColor(1, 1, 1, 1);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+        stage.act(delta);
+        stage.draw();
     }
 
     @Override
