@@ -14,10 +14,14 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
  * Created by miroshn on 02.06.15.
  */
 public enum Res {
+    /** фон прогрессбара */
+    PROGRESS_BAR_BASE("progress_bar_base.png",Types.TEXTURE),
+    /** индикатор прогрессбараа */
+    PROGRESS_BAR("progress_bar.png",Types.TEXTURE),
     /** фон игры */
     BACKGROUND("fon.jpg",Types.TEXTURE),
     /** альбом графических ресурсов*/
-    GRAPHIC_PACK("",Types.TEXTURE_REGION);
+    GRAPHIC_PACK("arcanoid.pack",Types.TEXTURE_REGION);
 
     /** Имя файла или ресурса */
     private final String name;

@@ -6,6 +6,10 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+/**
+ * Основной класс игры, при создании передает управление экрану загрузки ресурсов
+ * @author miroshn
+ */
 public class ArcanoidGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
