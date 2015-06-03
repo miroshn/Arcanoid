@@ -22,6 +22,7 @@ public class WelcomeScreen implements Screen {
     private static final float FADE_TIME = 0.5f;
     private final Title title; // изображение названия игры
     private final Stage stage;
+    private float dx,dy;
 
     /**
      * Инициализируется экран <br/>
@@ -30,7 +31,7 @@ public class WelcomeScreen implements Screen {
     public WelcomeScreen() {
         title = new Title(Titles.WELCOME_TITLE);
         title.setPosition((Gdx.graphics.getWidth() - title.getWidth())/2.0f
-                ,(Gdx.graphics.getHeight() - title.getHeight()/2.0f)/2.0f);
+                ,(Gdx.graphics.getHeight() - title.getHeight())/2.0f);
         title.getColor().a = 0;
         title.addAction(Actions.fadeIn(FADE_TIME));
         stage = new Stage();
@@ -44,6 +45,21 @@ public class WelcomeScreen implements Screen {
                 return true;
             }
         });
+//        title.addListener(new InputListener() {
+//            @Override
+//            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+//                super.touchDown(event, x, y, pointer, button);
+//                dx = x;
+//                dy = y;
+//                return true;
+//            }
+//
+//            @Override
+//            public void touchDragged(InputEvent event, float x, float y, int pointer) {
+//                super.touchDragged(event,  x,  y, pointer);
+//                title.setPosition(title.getX() + x - dx,title.getY() +y-dy);
+//            }
+//        });
         Gdx.input.setInputProcessor(stage);
     }
 
