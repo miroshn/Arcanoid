@@ -2,6 +2,7 @@ package ru.miroshn.arcanoid.helpers;
 
 import com.badlogic.gdx.Screen;
 import ru.miroshn.arcanoid.screens.LoadScreen;
+import ru.miroshn.arcanoid.screens.WelcomeScreen;
 
 /**
  * Перечисление возможных экранов <br/>
@@ -9,6 +10,13 @@ import ru.miroshn.arcanoid.screens.LoadScreen;
  * @author miroshn
  */
 public enum CustomScreen {
+    /** Экран приветствия с названием игры */
+    WELCOME_SCREEN {
+        @Override
+        protected Screen getScreenInstance() {
+            return new WelcomeScreen();
+        }
+    },
     /** Экран загрузки ресурсов */
     LOAD_SCREEN {
         @Override
