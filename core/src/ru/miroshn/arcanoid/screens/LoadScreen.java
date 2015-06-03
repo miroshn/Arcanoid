@@ -7,7 +7,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import ru.miroshn.arcanoid.helpers.AGAssetManager;
+import ru.miroshn.arcanoid.helpers.CustomScreen;
 import ru.miroshn.arcanoid.helpers.Res;
+import ru.miroshn.arcanoid.helpers.ScreenManager;
 
 /**
  * Экран загрузки ресурсов <br/>
@@ -59,6 +61,9 @@ public class LoadScreen implements Screen{
     public void render(float delta) {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        if (AGAssetManager.getInstance().update()) {
+            ScreenManager.getInstance().show(CustomScreen.WELCOME_SCREEN);
+        }
 
         batch.begin();
         batch.draw(progressBarBaseTexture, 10, Gdx.graphics.getHeight() / 2 - progressBarBaseTexture.getHeight() / 2,
@@ -67,9 +72,6 @@ public class LoadScreen implements Screen{
                 (Gdx.graphics.getWidth() - 20) * AGAssetManager.getInstance().getProgress(), progressBarTexture.getHeight());
         batch.end();
 
-        AGAssetManager.getInstance().update();
-//        if (AGAssetManager.getInstance().update()) {
-//        }
     }
 
     @Override
