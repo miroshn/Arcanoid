@@ -66,6 +66,10 @@ public class LoadScreen implements Screen{
         batch.draw(progressBarTexture, 10, Gdx.graphics.getHeight() / 2 - progressBarTexture.getHeight() / 2,
                 (Gdx.graphics.getWidth() - 20) * AGAssetManager.getInstance().getProgress(), progressBarTexture.getHeight());
         batch.end();
+
+        AGAssetManager.getInstance().update();
+//        if (AGAssetManager.getInstance().update()) {
+//        }
     }
 
     @Override
@@ -90,6 +94,6 @@ public class LoadScreen implements Screen{
 
     @Override
     public void dispose() {
-
+        batch.dispose();
     }
 }
