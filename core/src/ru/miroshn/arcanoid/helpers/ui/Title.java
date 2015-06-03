@@ -1,5 +1,6 @@
 package ru.miroshn.arcanoid.helpers.ui;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -16,6 +17,7 @@ public class Title extends Actor {
     public Title(Titles type) {
         texture = AGAssetManager.getInstance().get(type.getRes());
         setSize(texture.getRegionWidth(),texture.getRegionHeight());
+        fitToScreen();
     }
 
     @Override
@@ -24,5 +26,13 @@ public class Title extends Actor {
                 getOriginX(), getOriginY(),
                 getWidth(), getHeight(),
                 getScaleX(), getScaleY(), getRotation());
+    }
+
+    /**
+     * Установить размеры заголовка так чтоб он поместился на экран и занимал 3/5 места по ширене
+     */
+    private void fitToScreen() {
+        float scale = Gdx.graphics.getWidth() * 3.0f / 5.0f / getWidth();
+        setSize(getWidth() * scale,getHeight() * scale);
     }
 }
