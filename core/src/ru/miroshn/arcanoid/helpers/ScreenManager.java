@@ -18,7 +18,7 @@ public class ScreenManager implements Disposable {
     private final IntMap<Screen> screens; // Хранилище экранов
 
     private ScreenManager() {
-        screens = new IntMap<>();
+        screens = new IntMap<Screen>();
     }
 
     public static ScreenManager getInstance() {
