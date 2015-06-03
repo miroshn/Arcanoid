@@ -3,6 +3,13 @@ arcanoid.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+welcome_title
+  rotate: false
+  xy: 1, 388
+  size: 825, 328
+  orig: 825, 328
+  offset: 0, 0
+  index: -1
 background
   rotate: false
   xy: 1, 1
