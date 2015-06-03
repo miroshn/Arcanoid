@@ -1,6 +1,7 @@
 package ru.miroshn.arcanoid.helpers.ui;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -20,12 +21,21 @@ public class Title extends Actor {
         fitToScreen();
     }
 
+    /**
+     * Отрисовка объекта <br/>
+     * Идет игра с цветом упаковщика, иначе не работают действия с прозрачностью
+     * @param batch упаковщик спрайтов через который идет отрисовка
+     * @param parentAlpha прозрачность родителя
+     */
     @Override
     public void draw(Batch batch, float parentAlpha) {
+        Color c = batch.getColor();
+        batch.setColor(getColor());
         batch.draw(texture, getX(), getY(),
                 getOriginX(), getOriginY(),
                 getWidth(), getHeight(),
                 getScaleX(), getScaleY(), getRotation());
+        batch.setColor(c);
     }
 
     /**
