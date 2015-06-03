@@ -5,6 +5,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import ru.miroshn.arcanoid.gameobjects.Background;
 import ru.miroshn.arcanoid.helpers.ui.Title;
 import ru.miroshn.arcanoid.helpers.ui.Titles;
 
@@ -28,6 +29,7 @@ public class WelcomeScreen implements Screen {
         title.getColor().a = 0;
         title.addAction(Actions.fadeIn(0.8f));
         stage = new Stage();
+        stage.addActor(new Background());
         stage.addActor(title);
     }
 
