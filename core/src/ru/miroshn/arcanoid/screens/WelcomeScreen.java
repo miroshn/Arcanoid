@@ -3,9 +3,13 @@ package ru.miroshn.arcanoid.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import ru.miroshn.arcanoid.gameobjects.Background;
+import ru.miroshn.arcanoid.helpers.CustomScreen;
+import ru.miroshn.arcanoid.helpers.ScreenManager;
 import ru.miroshn.arcanoid.helpers.ui.Title;
 import ru.miroshn.arcanoid.helpers.ui.Titles;
 
@@ -15,6 +19,7 @@ import ru.miroshn.arcanoid.helpers.ui.Titles;
  * @author miroshn
  */
 public class WelcomeScreen implements Screen {
+    private static final float FADE_TIME = 0.5f;
     private final Title title; // изображение названия игры
     private final Stage stage;
 
@@ -27,10 +32,19 @@ public class WelcomeScreen implements Screen {
         title.setPosition((Gdx.graphics.getWidth() - title.getWidth())/2.0f
                 ,(Gdx.graphics.getHeight() - title.getHeight()/2.0f)/2.0f);
         title.getColor().a = 0;
-        title.addAction(Actions.fadeIn(0.8f));
+        title.addAction(Actions.fadeIn(FADE_TIME));
         stage = new Stage();
         stage.addActor(new Background());
         stage.addActor(title);
+        stage.addListener(new InputListener() {
+            @Override
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+                super.touchDown(event, x, y, pointer, button);
+                title.addAction(Actions.fadeOut(FADE_TIME));
+                return true;
+            }
+        });
+        Gdx.input.setInputProcessor(stage);
     }
 
     @Override
@@ -45,6 +59,11 @@ public class WelcomeScreen implements Screen {
 
         stage.act(delta);
         stage.draw();
+
+        if (title.getColor().a == 0 && title.getActions().size == 0) {
+            Gdx.input.setInputProcessor(null);
+            ScreenManager.getInstance().show(CustomScreen.GAME_SCREEN);
+        }
     }
 
     @Override
