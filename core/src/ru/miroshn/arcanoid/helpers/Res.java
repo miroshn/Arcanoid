@@ -14,16 +14,27 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
  * Created by miroshn on 02.06.15.
  */
 public enum Res {
+    //// Ресурсы в альбоме
+    /** альбом графических ресурсов*/
+    GRAPHIC_PACK("arcanoid.pack",Types.TEXTURE_REGION),
     /** заголовок игры */
     WELCOME_TITLE("welcome_title",Types.TEXTURE_REGION),
+    /** фон игры */
+    BACKGROUND("background",Types.TEXTURE_REGION),
+    /** ракетка */
+    ROCKET("rocket",Types.TEXTURE_REGION),
+    /** пустой блок */
+    BRICK_EMPTY("empty_brick",Types.TEXTURE_REGION),
+    /** заштрихованный блок */
+    BRICK_HALF_HATCH("half_hatch_brick",Types.TEXTURE_REGION),
+    /** заштрихованный на половину блок */
+    BRICK_HATCH("half_hatch_brick",Types.TEXTURE_REGION),
+
+    //// Ресурсы лежат отдельно
     /** фон прогрессбара */
     PROGRESS_BAR_BASE("progress_bar_base.png",Types.TEXTURE),
     /** индикатор прогрессбараа */
-    PROGRESS_BAR("progress_bar.png",Types.TEXTURE),
-    /** фон игры */
-    BACKGROUND("background",Types.TEXTURE_REGION),
-    /** альбом графических ресурсов*/
-    GRAPHIC_PACK("arcanoid.pack",Types.TEXTURE_REGION);
+    PROGRESS_BAR("progress_bar.png",Types.TEXTURE);
 
     /** Имя файла или ресурса */
     private final String name;

@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import ru.miroshn.arcanoid.gameobjects.Background;
 import ru.miroshn.arcanoid.gameobjects.Rocket;
 import ru.miroshn.arcanoid.helpers.Conf;
@@ -20,7 +21,10 @@ public class GameScreen implements Screen {
         stage = new Stage();
         stage.setDebugAll(Conf.GRAPHICS_DEBUG);
         stage.addActor(new Background());
-        stage.addActor(new Rocket());
+        Rocket r = new Rocket();
+        r.setPosition(Gdx.graphics.getWidth() / 2.0f - r.getOriginX(),-r.getHeight());
+        r.addAction(Actions.moveTo(Gdx.graphics.getWidth() / 2.0f - r.getOriginX(), 100 - r.getHeight(), 0.2f));
+        stage.addActor(r);
     }
 
     @Override

@@ -5,15 +5,43 @@ filter: Nearest,Nearest
 repeat: none
 welcome_title
   rotate: false
-  xy: 1, 388
+  xy: 1, 527
   size: 825, 328
   orig: 825, 328
   offset: 0, 0
   index: -1
+rocket
+  rotate: false
+  xy: 1, 427
+  size: 660, 98
+  orig: 660, 98
+  offset: 0, 0
+  index: -1
 background
   rotate: false
-  xy: 1, 1
+  xy: 1, 40
   size: 500, 385
   orig: 500, 385
+  offset: 0, 0
+  index: -1
+empty_brick
+  rotate: false
+  xy: 503, 285
+  size: 286, 140
+  orig: 286, 140
+  offset: 0, 0
+  index: -1
+hatch_brick
+  rotate: false
+  xy: 503, 143
+  size: 286, 140
+  orig: 286, 140
+  offset: 0, 0
+  index: -1
+half_hatch_brick
+  rotate: false
+  xy: 503, 1
+  size: 286, 140
+  orig: 286, 140
   offset: 0, 0
   index: -1
