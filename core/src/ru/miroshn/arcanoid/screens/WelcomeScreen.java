@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import ru.miroshn.arcanoid.gameobjects.Background;
+import ru.miroshn.arcanoid.helpers.Conf;
 import ru.miroshn.arcanoid.helpers.CustomScreen;
 import ru.miroshn.arcanoid.helpers.ScreenManager;
 import ru.miroshn.arcanoid.helpers.ui.Title;
@@ -22,7 +23,7 @@ public class WelcomeScreen implements Screen {
     private static final float FADE_TIME = 0.5f;
     private final Title title; // изображение названия игры
     private final Stage stage;
-    private float dx,dy;
+//    private float dx,dy;
 
     /**
      * Инициализируется экран <br/>
@@ -35,6 +36,7 @@ public class WelcomeScreen implements Screen {
         title.getColor().a = 0;
         title.addAction(Actions.fadeIn(FADE_TIME));
         stage = new Stage();
+        stage.setDebugAll(Conf.GRAPHICS_DEBUG);
         stage.addActor(new Background());
         stage.addActor(title);
         stage.addListener(new InputListener() {

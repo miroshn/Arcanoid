@@ -9,4 +9,6 @@ public class Conf {
     public static final int DISPLAY_WIDTH = 320*2;
     /** Высота Экрана/Окна*/
     public static final int DISPLAY_HEIGHT = 850;
+    /** Графическая отладочная информация */
+    public static final boolean GRAPHICS_DEBUG = true;
 }
