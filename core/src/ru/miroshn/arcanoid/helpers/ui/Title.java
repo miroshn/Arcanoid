@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import ru.miroshn.arcanoid.helpers.AGAssetManager;
+import ru.miroshn.arcanoid.helpers.Conf;
 
 /**
  * Различные заголовки используемые в игре <br/>
@@ -19,6 +20,7 @@ public class Title extends Actor {
         texture = AGAssetManager.getInstance().get(type.getRes());
         setSize(texture.getRegionWidth(),texture.getRegionHeight());
         fitToScreen();
+        setColor(Conf.DEF_COLOR);
     }
 
     /**

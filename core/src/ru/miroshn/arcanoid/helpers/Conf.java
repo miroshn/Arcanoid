@@ -1,5 +1,7 @@
 package ru.miroshn.arcanoid.helpers;
 
+import com.badlogic.gdx.graphics.Color;
+
 /**
  * Класс общих настроек
  * Created by miroshn on 02.06.15.
@@ -11,4 +13,6 @@ public class Conf {
     public static final int DISPLAY_HEIGHT = 850;
     /** Графическая отладочная информация */
     public static final boolean GRAPHICS_DEBUG = true;
+    /** Цвет по умолчанию */
+    public static final Color DEF_COLOR = new Color(0,8.0f/255.0f,161.0f/255.0f,1);
 }
