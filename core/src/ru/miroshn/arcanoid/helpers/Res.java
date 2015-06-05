@@ -17,6 +17,8 @@ public enum Res {
     //// Ресурсы в альбоме
     /** альбом графических ресурсов*/
     GRAPHIC_PACK("arcanoid.pack",Types.TEXTURE_REGION),
+    /** Мячик */
+    BALL("ball",Types.TEXTURE_REGION),
     /** заголовок игры */
     WELCOME_TITLE("welcome_title",Types.TEXTURE_REGION),
     /** фон игры */

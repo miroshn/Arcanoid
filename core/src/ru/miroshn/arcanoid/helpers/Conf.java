@@ -15,4 +15,6 @@ public class Conf {
     public static final boolean GRAPHICS_DEBUG = false;
     /** Цвет по умолчанию */
     public static final Color DEF_COLOR = new Color(0,8.0f/255.0f,161.0f/255.0f,1);
+    /** отступ от нижней границы экрана в процентах */
+    public static final float BOTTOM_BORDER = 20;
 }
