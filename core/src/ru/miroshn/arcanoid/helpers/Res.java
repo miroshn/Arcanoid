@@ -5,6 +5,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+import java.lang.reflect.Type;
+
 /**
  * Тут собраны все имена файлов и ресурсов и превращены в валидируемый enum
  * <p>
@@ -17,6 +19,8 @@ public enum Res {
     //// Ресурсы в альбоме
     /** альбом графических ресурсов*/
     GRAPHIC_PACK("arcanoid.pack",Types.TEXTURE_REGION),
+    /** Часть бордюра */
+    BORDER_PART("border", Types.TEXTURE_REGION),
     /** Мячик */
     BALL("ball",Types.TEXTURE_REGION),
     /** заголовок игры */
