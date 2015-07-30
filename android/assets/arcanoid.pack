@@ -38,9 +38,16 @@ hatch_brick
   orig: 286, 140
   offset: 0, 0
   index: -1
+border
+  rotate: false
+  xy: 828, 345
+  size: 87, 471
+  orig: 87, 471
+  offset: 0, 0
+  index: -1
 ball
   rotate: false
-  xy: 828, 722
+  xy: 503, 108
   size: 94, 94
   orig: 94, 94
   offset: 0, 0
